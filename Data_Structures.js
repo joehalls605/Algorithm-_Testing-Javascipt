@@ -69,7 +69,68 @@ dynamic_array.print();
 
 /* QUEUES
 - A collection of elements with operations to add (enqueue) elements at the back and remove (dequeue) elements from the front. First in first out
+- This is similar to building  a queue.
 */
 
 
 // JOE REFER TO QUEUE FILE.
+
+/* QUEUES
+A collection of elements with operations to push (add) elements onto the top and pop (remove) elements from the top.
+- This is similar to putting books on a stack and pulling them off one at a time.
+*/
+
+//HASH FUNCTION
+
+// Simple hash function for strings
+function simpleHash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+        hash += key.charCodeAt(i);
+    }
+    return hash;
+}
+
+// Example usage
+const hashedValue = simpleHash("hello");
+console.log(hashedValue);
+
+// HASH TABLE
+
+/*
+Hash Table:
+A hash table is a data structure that uses a hash function to map keys to indices (positions) in an array for efficient data retrieval.
+*/
+
+class HashTable {
+    constructor() {
+        this.table = new Array(10); // Size of the array (adjustable)
+    }
+
+    // Hash function for simplicity (you may use a more sophisticated one)
+    hash(key) {
+        let hash = 0;
+        for (let i = 0; i < key.length; i++) {
+            hash += key.charCodeAt(i);
+        }
+        return hash % this.table.length; // Ensure the index is within the array size
+    }
+
+    // Insert key-value pair into the hash table
+    insert(key, value) {
+        const index = this.hash(key);
+        this.table[index] = value;
+    }
+
+    // Retrieve value based on key
+    get(key) {
+        const index = this.hash(key);
+        return this.table[index];
+    }
+}
+
+// Example usage
+const myHashTable = new HashTable();
+myHashTable.insert("name", "John");
+console.log(myHashTable.get("name")); // Output: John
+
