@@ -134,3 +134,65 @@ const myHashTable = new HashTable();
 myHashTable.insert("name", "John");
 console.log(myHashTable.get("name")); // Output: John
 
+// LINEAR SEARCH
+
+/*
+Hash Table:
+A search algorithm that sequentially checks each element in the list until a match is found
+*/
+
+function linearSearch(array, target) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === target) {
+            return i; // Return the index if the target is found
+        }
+    }
+    return -1; // Return -1 if the target is not found in the array
+}
+
+
+// BIG O NOTATION
+
+/*
+A notation used to describe the upper bound (worst case scenario) of the growth rate of the algorithm in terms of space or time complexity
+Example: O(n) for linear time complexity.
+*/
+
+/*
+O(1) Constant Time Complexity
+Constant time complexity refers to algorithms where the execution time remains the same,
+regardless of the size of the input data.
+*/
+
+function access_element(array, index){
+    return array[index];
+}
+
+/*
+O(n) - Linear Time Complexity
+Linear time complexity indicates that the running time of an 
+algorithm grows proportionally with the size of the input data.
+
+*/
+
+function find_max(target) {
+    const length = target.length;
+
+    if (length === 0) {
+        // Handle the case where the array is empty
+        return undefined;
+    }
+
+    let max_val = target[0];
+
+    for (let i = 1; i < length; i++) {
+        if (target[i] > max_val) {
+            max_val = target[i];
+        }
+    }
+
+    return max_val;
+}
+
+
+
