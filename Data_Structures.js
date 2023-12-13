@@ -194,5 +194,16 @@ function find_max(target) {
     return max_val;
 }
 
+/*
+HEAPS
+
+A specialised tree-based data structure that satisfies the heap property.
+In a heap, the value of each node is either greater or equal than the max heap or less than or equal to 
+the min heap the values of it’s children. This is to ensure the root of the heap is a minimum or maximum element in the entire heap
+
+REFER TO FILE.
+
+*/
+
 
 
